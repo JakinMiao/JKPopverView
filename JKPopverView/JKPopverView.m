@@ -81,7 +81,7 @@
     CGFloat maxWidth = MIN(relateView.x + relateView.width / 2.0, superView.width - (relateView.x + relateView.width / 2.0));
     [popoverView adjustBoundsWithMaxWidth:(maxWidth - 10) * 2];
     CGRect rect = [relateView convertRect:relateView.bounds toView:superView];
-    CGPoint point = [relateView convertPoint:relateView.center toView:superView];
+    CGPoint point = [superView convertPoint:relateView.center toView:superView];
     CGPoint myPoint = CGPointMake(point.x, rect.origin.y + rect.size.height);
     popoverView.center = myPoint;
     popoverView.y = rect.origin.y + rect.size.height * 0.8;

@@ -19,8 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(100, 100, 100, 60);
+    button.frame = CGRectMake(20, 30, 70, 60);
     [button setTitle:@"小气泡" forState:UIControlStateNormal];
     [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     button.backgroundColor = [UIColor yellowColor];
