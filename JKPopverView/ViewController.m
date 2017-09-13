@@ -2,8 +2,8 @@
 //  ViewController.m
 //  JKPopverView
 //
-//  Created by Jakin on 2017/8/10.
-//  Copyright © 2017年 Jakin. All rights reserved.
+//  Created by Miao on 2017/7/28.
+//  Copyright © 2017年 Miao. All rights reserved.
 //
 
 #import "ViewController.h"
@@ -20,13 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(20, 30, 70, 60);
-    [button setTitle:@"小气泡" forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    button.backgroundColor = [UIColor yellowColor];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(50, 50, 100, 50)];
+    button.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:button];
-     _jkPopverView = [JKPopverView showText:@"小气泡" inView:self.view relateView:button];
+    JKPopverView *jkPopverView = [JKPopverView showText:@"tips浮动显示哈" inView:self.view relateView:button];
 }
 
 

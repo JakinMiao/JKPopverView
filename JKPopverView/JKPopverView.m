@@ -1,10 +1,13 @@
 //
 //  JKPopverView.m
-//  JKPopverView
+//  TipsPopverView
 //
-//  Created by 刘勇 on 2017/8/10.
-//  Copyright © 2017年 Jakin. All rights reserved.
+//  Created by Miao on 2017/7/28.
+//  Copyright © 2017年 Miao. All rights reserved.
 //
+
+#import "JKPopverView.h"
+#import "UIView+Frame.h"
 
 #import "JKPopverView.h"
 #import "UIView+Frame.h"
@@ -78,14 +81,14 @@
     popoverView.layer.cornerRadius = 15;
     [superView addSubview:popoverView];
     
-    CGFloat maxWidth = MIN(relateView.x + relateView.width / 2.0, superView.width - (relateView.x + relateView.width / 2.0));
-    [popoverView adjustBoundsWithMaxWidth:(maxWidth - 10) * 2];
-    CGRect rect = [relateView convertRect:relateView.bounds toView:superView];
-    CGPoint point = [superView convertPoint:relateView.center toView:superView];
-    CGPoint myPoint = CGPointMake(point.x, rect.origin.y + rect.size.height);
-    popoverView.center = myPoint;
-    popoverView.y = rect.origin.y + rect.size.height * 0.8;
+    CGFloat minWidth = MIN(relateView.x + relateView.width / 2.0, superView.width - (relateView.x + relateView.width / 2.0));
+    [popoverView adjustBoundsWithMaxWidth:(minWidth - 10) * 2];
+    CGRect rect = [relateView.superview convertRect:relateView.frame toView:superView];
+    CGPoint point = [relateView.superview convertPoint:relateView.center toView:superView];
+    
+    popoverView.x = point.x - popoverView.width/2;
+    popoverView.y = rect.origin.y + rect.size.height;
+    
     return popoverView;
 }
 @end
-

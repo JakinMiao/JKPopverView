@@ -2,8 +2,8 @@
 //  JKPopverView.h
 //  JKPopverView
 //
-//  Created by 刘勇 on 2017/8/10.
-//  Copyright © 2017年 Jakin. All rights reserved.
+//  Created by Miao on 2017/7/28.
+//  Copyright © 2017年 Miao. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
